@@ -22,7 +22,7 @@ const routes = [
     },
   },
   {
-    path: '/:id',
+    path: '/photo',
     name: 'PhotoDetails',
     components: {
       default: import('@thefactory/views/photo-details-view.vue'),

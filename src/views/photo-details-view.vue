@@ -29,7 +29,7 @@ const isFavoritePhoto = computed(() => {
 onMounted(async () => {
   isLoadingPhoto.value = true;
   await router.isReady();
-  const photoId = route.params.id as string;
+  const photoId = route.query.id as string;
   photo.value = await getPhotoDetails(photoId);
   isLoadingPhoto.value = false;
 });
