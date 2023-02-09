@@ -22,4 +22,4 @@ pnpm dev --host
 
 ## Deployed app
 
-WIP
+Navigate to [`deployed app`](https://dulcet-sprinkles-b9694a.netlify.app)
