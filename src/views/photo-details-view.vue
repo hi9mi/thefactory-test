@@ -29,7 +29,7 @@ const isFavoritePhoto = computed(() => {
 onMounted(async () => {
   isLoadingPhoto.value = true;
   await router.isReady();
-  const photoId = route.query.id as string;
+  const photoId = route.params.id as string;
   photo.value = await getPhotoDetails(photoId);
   isLoadingPhoto.value = false;
 });
@@ -107,8 +107,8 @@ onMounted(async () => {
           </div>
         </div>
         <preview-photo
-          :src="photo?.urls.full!"
-          :alt="photo?.alt_description!"
+          :src="photo?.urls.full! ?? ''"
+          :alt="photo?.alt_description! ?? ''"
           :is-open="isOpenPreviewPhoto"
           @close="isOpenPreviewPhoto = false"
           @open="isOpenPreviewPhoto = true"

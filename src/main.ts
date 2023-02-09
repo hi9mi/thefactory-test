@@ -17,27 +17,27 @@ const routes = [
     path: '/favorites',
     name: 'Favorites',
     components: {
-      default: import('@thefactory/views/favorites-view.vue'),
+      default: () => import('@thefactory/views/favorites-view.vue'),
       HomeLink,
     },
   },
   {
-    path: '/photo',
+    path: '/photo/:id',
     name: 'PhotoDetails',
     components: {
-      default: import('@thefactory/views/photo-details-view.vue'),
+      default: () => import('@thefactory/views/photo-details-view.vue'),
       HomeLink,
     },
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 
 const app = createApp(App);
 
-app.use(router);
 app.use(createPinia());
+app.use(router);
 app.mount('#app');
