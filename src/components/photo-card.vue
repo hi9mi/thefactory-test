@@ -3,7 +3,7 @@ defineProps<{ src: string; alt: string; id: string }>();
 </script>
 
 <template>
-  <router-link :to="`/photo/${id}`">
+  <router-link :to="{ name: 'PhotoDetails', params: { id } }">
     <img
       :src="src"
       :alt="alt"
